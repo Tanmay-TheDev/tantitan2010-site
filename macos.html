@@ -645,7 +645,7 @@ body.dark .f-node.sel{background:rgba(255,255,255,.14)}
 <meta name="twitter:title" content="macOS — TanTitan2010 Command Center">
 <meta name="twitter:description" content="A browser-based macOS desktop experience.">
 
-<link rel="preload" as="image" href="TanTitan2010-logo.webp" fetchpriority="high">
+<link rel="preload" as="image" href="27-TanTitan2010-logo.webp" fetchpriority="high">
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <style id="macos-mobile-pro">
@@ -766,13 +766,13 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const MB_H=30,isMobile=()=>innerWidth<=820,hoverable=matchMedia('(hover:hover)').matches;
 const APPLE='<svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>';
 const IMG={
- wpDay:'wallpapers/sequoia-day-desktop.webp',
- wpNight:'wallpapers/sequoia-night-desktop.webp',
- wpDayMobile:'wallpapers/sequoia-day-mobile.webp',
- wpNightMobile:'wallpapers/sequoia-night-mobile.webp',
- wpDayPrev:'wallpapers/sequoia-day-preview.webp',
- wpNightPrev:'wallpapers/sequoia-night-preview.webp',
- avatar:'TanTitan2010-logo.webp',
+ wpDay:'67-sequoia-day-desktop.webp',
+ wpNight:'70-sequoia-night-desktop.webp',
+ wpDayMobile:'68-sequoia-day-mobile.webp',
+ wpNightMobile:'71-sequoia-night-mobile.webp',
+ wpDayPrev:'69-sequoia-day-preview.webp',
+ wpNightPrev:'72-sequoia-night-preview.webp',
+ avatar:'27-TanTitan2010-logo.webp',
  finder:'https://image.qwenlm.ai/public_source/bd3a8791-0240-4c5f-9122-320cf3c8c671/1f062d037-e23d-4196-8756-0a9b25979b65.png',
  safari:'https://image.qwenlm.ai/public_source/bd3a8791-0240-4c5f-9122-320cf3c8c671/157d71f19-7808-43fe-90b8-5433f8bbf404.png',
  messages:'https://image.qwenlm.ai/public_source/bd3a8791-0240-4c5f-9122-320cf3c8c671/189f5b47d-0a95-471d-85cf-a4d8bedeec08.png',
@@ -796,9 +796,9 @@ const S={dark:false,wp:0,bright:1,vol:.65,wifi:true,bt:true,focus:false,z:100,wi
 const WALLPAPERS=[
  {type:'img',src:innerWidth<=820?IMG.wpDayMobile:IMG.wpDay,prev:IMG.wpDayPrev,name:'Sequoia'},
  {type:'img',src:innerWidth<=820?IMG.wpNightMobile:IMG.wpNight,prev:IMG.wpNightPrev,name:'Sequoia Night'},
- {type:'img',src:innerWidth<=820?'wallpapers/bloom-mobile.webp':'wallpapers/bloom-desktop.webp',prev:'wallpapers/bloom-preview.webp',name:'Bloom'},
- {type:'img',src:innerWidth<=820?'wallpapers/mountain-lake-mobile.webp':'wallpapers/mountain-lake-desktop.webp',prev:'wallpapers/mountain-lake-preview.webp',name:'Mountain Lake'},
- {type:'img',src:innerWidth<=820?'wallpapers/city-dusk-mobile.webp':'wallpapers/city-dusk-desktop.webp',prev:'wallpapers/city-dusk-preview.webp',name:'City Dusk'},
+ {type:'img',src:innerWidth<=820?'59-bloom-mobile.webp':'58-bloom-desktop.webp',prev:'60-bloom-preview.webp',name:'Bloom'},
+ {type:'img',src:innerWidth<=820?'65-mountain-lake-mobile.webp':'64-mountain-lake-desktop.webp',prev:'66-mountain-lake-preview.webp',name:'Mountain Lake'},
+ {type:'img',src:innerWidth<=820?'62-city-dusk-mobile.webp':'61-city-dusk-desktop.webp',prev:'63-city-dusk-preview.webp',name:'City Dusk'},
  {type:'css',cls:'w-sonoma',name:'Sonoma Dunes'},
  {type:'css',cls:'w-ventura',name:'Ventura Coast'},
  {type:'css',cls:'w-graphite',name:'Graphite'}
@@ -2098,4 +2098,4 @@ html,body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;t
 </style>
   <script src="tt-motion.js"></script>
 </body>
-</html>
+ </html>
