@@ -1,0 +1,70 @@
+/* Safe iOS-inspired motion layer.
+ * Functional surfaces keep full ownership of transform/pointer/scroll behavior.
+ */
+:root{
+  --tt-ease-spring:cubic-bezier(.22,1,.36,1);
+  --tt-ease-soft:cubic-bezier(.16,1,.3,1);
+  --tt-press-scale:.975;
+  --tt-lift-y:-2px;
+}
+html{scrollbar-gutter:stable}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{-webkit-tap-highlight-color:transparent}
+
+/* Only the explicit motion targets receive transform transitions. */
+button.tt-motion-target,
+[role="button"].tt-motion-target,
+a.tt-motion-target,
+.ui-button.tt-motion-target,
+.tt-pressable.tt-motion-target{
+  transition:
+    transform 260ms var(--tt-ease-spring),
+    background-color 220ms var(--tt-ease-soft),
+    border-color 220ms var(--tt-ease-soft),
+    box-shadow 260ms var(--tt-ease-soft),
+    opacity 220ms var(--tt-ease-soft),
+    filter 220ms var(--tt-ease-soft);
+}
+
+.tt-pressing{
+  transform:scale(var(--tt-press-scale)) translateY(0) !important;
+  filter:saturate(1.04);
+}
+
+/* Safe hover lift; never applied to draggable/game/system surfaces. */
+button.tt-motion-target:not(:disabled):hover,
+[role="button"].tt-motion-target:hover,
+a.tt-motion-target:hover,
+.ui-button.tt-motion-target:hover{
+  transform:translateY(var(--tt-lift-y));
+}
+
+.tt-reveal{
+  opacity:0;
+  transform:translate3d(0,16px,0) scale(.985);
+  transition:
+    opacity 560ms var(--tt-ease-soft),
+    transform 700ms var(--tt-ease-spring);
+  transition-delay:var(--tt-reveal-delay,0ms);
+}
+.tt-reveal.tt-visible{opacity:1;transform:none}
+
+.tt-glass{position:relative;isolation:isolate}
+.tt-glass::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.12),transparent 42%,rgba(255,255,255,.04));opacity:.55}
+
+@media (hover:none){
+  button.tt-motion-target:hover,
+  [role="button"].tt-motion-target:hover,
+  a.tt-motion-target:hover,
+  .ui-button.tt-motion-target:hover{transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .tt-reveal{opacity:1;transform:none}
+}
+
+/* Performance guard: never animate the browser-heavy glass or system surfaces. */
+@media (max-width:700px),(prefers-reduced-data: reduce){
+  .tt-glass::after{display:none}
+  .tt-reveal{transition-duration:360ms}
+}

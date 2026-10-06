@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tantitan2010.netlify.app/sitemap.xml

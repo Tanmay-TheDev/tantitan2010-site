@@ -1,0 +1,8 @@
+Stockfish 18 Lite (WASM) is included as:
+  stockfish-18-lite-single.js
+  stockfish-18-lite-single.wasm
+
+These files are from Stockfish.js (nmrugg/stockfish.js), based on
+official Stockfish, and are licensed under the GNU General Public
+License v3.0. See https://github.com/nmrugg/stockfish.js
+and https://github.com/official-stockfish/Stockfish
