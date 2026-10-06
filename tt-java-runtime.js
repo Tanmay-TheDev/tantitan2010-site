@@ -4,7 +4,7 @@
 (function(root){
   'use strict';
   const CJ_VERSION=8;
-  const ECJ_LOCAL='ecj.jar';
+  const ECJ_LOCAL='75-ecj.jar';
   const ECJ_CDN='https://repo1.maven.org/maven2/org/eclipse/jdt/ecj/3.33.0/ecj-3.33.0.jar';
   const state={mode:'uninitialized',ready:null,ecj:null};
 
